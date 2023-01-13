@@ -1,5 +1,21 @@
-
 {
-    "_comment": "solves the SyntaxError: Cannot use import statement outside a module",
-    "type": "module" 
-  }
+  "_comment": " type: module solves the SyntaxError: Cannot use import statement outside a module",
+  "type": "module",
+  "name": "intro-to-node",
+  "description": "## What does copyFile do? The copyFile() method is used to asynchronously copy a file from the source path to destination path.",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RebRey/intro-to-node.git"
+  },
+  "author": "Rebecca Reyes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RebRey/intro-to-node/issues"
+  },
+  "homepage": "https://github.com/RebRey/intro-to-node#readme"
+}

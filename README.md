@@ -40,6 +40,8 @@ Type this inside the json document
   "_comment": "Put your JSON comment here"
 }
 
+OR you can also create a package.json document via terminal cd into intro-to-node file and run this command: npm init
+
 STEP 5: on the terminal cd into "intro-to-node" then run the command: node index.js
 if file 2 already exists you will get an error
 Example:
