@@ -1,0 +1,5 @@
+
+{
+    "_comment": "solves the SyntaxError: Cannot use import statement outside a module",
+    "type": "module" 
+  }

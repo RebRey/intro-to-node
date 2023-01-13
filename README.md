@@ -1,22 +1,52 @@
 # intro-to-node
 
-## Background:
-JavaScript is a high-level programing language that executes synchronously (code is executed line by line). Asynchronous code can be implemented so that some block of code can be executed along with the original code thread so that the execution of the code can be done in parallel. To implement asynchronous code, **callbacks** and **promises** can be used. 
+## What does copyFile do?
+The copyFile() method is used to asynchronously copy a file from the source path to destination path.
 
-## What are callbacks?
-Callbacks are functions that are passed inside the arguments of other functions, this procedure is valid in JavaScript because functions are objects and objects can be passed as arguments to functions.
+**fs.copyFile(src, dest[, mode], callback)**
 
-## When are callback functions used?
-Callbacks functions are used to acquire control over the sequence of execution. Generally, functions are executed on the basis of the sequence that they are invoked, not on the sequence in which they are defined.
+src <string> | <Buffer> | <URL> source filename to copy
+dest <string> | <Buffer> | <URL> destination filename of the copy operation
+mode <integer> modifiers for copy operation. Default: 0.
+callback <Function>
 
-## What are promises?
-A promise is an object and is something that is done/completed in the future. In JavaScript, it is exactly the same as in real life.
+## How do you use the copyFile method?
 
-## When are promises used?
-In Node.js applications, it’s not unusual to see a large number of nested callback functions being used to accomplish several activities. This is commonly referred to as callback hell, as it can make the code extremely complicated and disorganized.
+STEP 1: create a document called index.js
 
+STEP 2: in the index.js document, require the node module by using import
+import { copyFile, constants } from 'node:fs';
 
-helpful website for reference:
-(https://linuxhint.com/callback-promise-javascript-examples/#:~:text=A%20callback%20function%20is%20passed,constructor%20to%20initialize%20a%20promise.)
+STEP 3: Call the method 
+function messageFunction(err) {
+  if (err) throw err;
+  console.log('file1.txt was copied to file2.txt');
+}
+* destination.txt will be created or overwritten by default.
+* by using COPYFILE_EXCL, the operation will fail if destination.txt (file2.txt) exists.
+copyFile("file1.txt", "file2.txt", constants.COPYFILE_EXCL, messageFunction);
 
-(https://blog.logrocket.com/guide-promises-node-js/#:~:text=Promises%20can%20be%20used%20to,can%20result%20in%20callback%20hell).)
+STEP 4: Create a package.json document
+This will solve the SyntaxError: Cannot use import statement outside a module
+Type this inside the json document
+{
+    "_comment": "solves the SyntaxError: Cannot use import statement outside a module",
+    "type": "module" 
+  }
+
+* Basic JSON Comment Example"
+{
+  "Id": 1,
+  "_comment": "Put your JSON comment here"
+}
+
+STEP 5: on the terminal cd into "intro-to-node" then run the command: node index.js
+if file 2 already exists you will get an error
+Example:
+[Error: EEXIST: file already exists, copyfile 'file1.txt' -> 'file2.txt'] {
+  errno: -17,
+  code: 'EEXIST',
+  syscall: 'copyfile',
+  path: 'file1.txt',
+  dest: 'file2.txt'
+}
