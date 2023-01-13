@@ -3,7 +3,7 @@
 ## Background:
 JavaScript is a high-level programing language that executes synchronously (code is executed line by line). Asynchronous code can be implemented so that some block of code can be executed along with the original code thread so that the execution of the code can be done in parallel. To implement asynchronous code, **callbacks** and **promises** can be used. 
 
-## What are callbacks?:
+## What are callbacks?
 Callbacks are functions that are passed inside the arguments of other functions, this procedure is valid in JavaScript because functions are objects and objects can be passed as arguments to functions.
 
 ## When are callback functions used?
